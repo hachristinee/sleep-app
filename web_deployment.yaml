@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webapp
+  name: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-react
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - image: us-central1-docker.pkg.dev/webbies-357411/my-dock-repo/nginx-react:v1.1
+        name: web-service
+        imagePullPolicy: Always
+        resources: {}
+        env:
+        - name: webport
+          value: '3500'
+        ports:
+        - containerPort: 80
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp
+  labels:
+    run: webapp
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: webapp
+  type: LoadBalancer
