@@ -1,0 +1,13 @@
+steps:
+# Docker Build
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t',
+         'us-central1-docker.pkg.dev/webbies-357411/my-dock-repo/sleep-web:v1',
+         '.']
+
+# Docker Push
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push',
+         'us-central1-docker.pkg.dev/webbies-357411/my-dock-repo/sleep-web:v1']
+
+
