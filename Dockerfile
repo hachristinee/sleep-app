@@ -1,7 +1,7 @@
 FROM node:10 AS ui-build
 WORKDIR /usr/src/app
 COPY web-app/ ./web-app/
-RUN cd web-app && npm install && npm run build
+RUN cd web-app && npm install && npm run
 
 
 FROM nginx:alpine
