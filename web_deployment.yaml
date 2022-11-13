@@ -9,17 +9,17 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx-react
+      app: webapp
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: web-app
+        app: webapp
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/webbies-357411/my-dock-repo/nginx-react:v1.1
-        name: web-service
+      - image: us-central1-docker.pkg.dev/webbies-357411/my-dock-repo/sleep-web:v1
+        name: webapp
         imagePullPolicy: Always
         resources: {}
         env:

@@ -10,10 +10,10 @@ const hbs = require('hbs')
 console.log(path.join(__dirname, '../public'))
 const now = new Date()
 const app = express()
-const webport = process.env.WEB_PORT
+const webport = process.env.WEB_PORT || 3500
 const options = {
   headers: {"content-type": "application/json"}}
-defaults.baseURL = process.env.APPSERVER
+defaults.baseURL = process.env.APPSERVER || 'http://localhost:3000'
 
 
 //Defining Paths
