@@ -18,7 +18,7 @@ spec:
         app: webapp
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/webbies-357411/my-dock-repo/sleep-web:v1.1
+      - image: us-central1-docker.pkg.dev/webbies-357411/my-dock-repo/sleep-web:v1.2
         name: webapp
         imagePullPolicy: Always
         resources: {}
