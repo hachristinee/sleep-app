@@ -18,7 +18,7 @@ spec:
         app: webapp
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/webbies-357411/my-dock-repo/sleep-web:v1
+      - image: us-central1-docker.pkg.dev/webbies-357411/my-dock-repo/sleep-web:v1.1
         name: webapp
         imagePullPolicy: Always
         resources: {}
@@ -26,7 +26,7 @@ spec:
         - name: webport
           value: '3500'
         ports:
-        - containerPort: 80
+        - containerPort: 3500
 status: {}
 
 ---
@@ -39,7 +39,7 @@ metadata:
     run: webapp
 spec:
   ports:
-  - port: 80
+  - port: 3500
     protocol: TCP
   selector:
     app: webapp
