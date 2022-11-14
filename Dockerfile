@@ -19,3 +19,4 @@ COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 3500 80
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
+CMD ["node", "app.js"]
